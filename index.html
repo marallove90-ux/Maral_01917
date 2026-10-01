@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>برای عروسک کوچولوی من 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;800&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:'Vazirmatn',sans-serif;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 20% 20%,#fff 0 3%,transparent 4%),
+        radial-gradient(circle at 80% 30%,#fff8 0 2%,transparent 3%),
+        linear-gradient(135deg,#ffd9e8,#f4d8ff,#dcefff);
+    color:#71465c;
+}
+
+/* ستاره‌های پس‌زمینه */
+
+.star{
+    position:fixed;
+    color:#fff;
+    font-size:20px;
+    animation:twinkle 2s infinite alternate;
+    z-index:0;
+}
+
+.s1{top:12%;left:12%}
+.s2{top:25%;left:82%;animation-delay:.5s}
+.s3{top:72%;left:8%;animation-delay:1s}
+.s4{top:80%;left:88%;animation-delay:1.5s}
+.s5{top:45%;left:94%;animation-delay:.8s}
+
+@keyframes twinkle{
+    from{
+        opacity:.3;
+        transform:scale(.7) rotate(0);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.2) rotate(20deg);
+    }
+}
+
+/* قلب‌های شناور */
+
+.floating-heart{
+    position:fixed;
+    bottom:-50px;
+    color:#ff76a9;
+    font-size:24px;
+    opacity:.65;
+    animation:floatUp 8s linear infinite;
+    z-index:1;
+}
+
+.f1{left:10%;animation-delay:0s}
+.f2{left:25%;animation-delay:2s}
+.f3{left:48%;animation-delay:4s}
+.f4{left:70%;animation-delay:1s}
+.f5{left:88%;animation-delay:3s}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.7;
+    }
+
+    100%{
+        transform:translateY(-115vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* صفحه اول */
+
+#intro{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    z-index:5;
+}
+
+.intro-content{
+    text-align:center;
+    animation:fadeUp 1s ease;
+}
+
+.intro-small{
+    color:#b55c83;
+    font-size:15px;
+    margin-bottom:12px;
+}
+
+/* پاکت */
+
+.envelope{
+    width:320px;
+    height:220px;
+    position:relative;
+    cursor:pointer;
+    margin:auto;
+    transition:.4s;
+    filter:drop-shadow(0 25px 25px #b94e7a45);
+}
+
+.envelope:hover{
+    transform:translateY(-10px) scale(1.04);
+}
+
+.envelope-body{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:180px;
+    background:linear-gradient(145deg,#ff8fba,#ff72a8);
+    border-radius:18px;
+    box-shadow:inset 0 -10px 0 #e85d91;
+}
+
+/* نامه داخل پاکت */
+
+.letter-preview{
+    position:absolute;
+    width:255px;
+    height:155px;
+    left:32px;
+    top:15px;
+    background:#fffafd;
+    border-radius:12px;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    color:#db5b91;
+    font-size:20px;
+    font-weight:800;
+    box-shadow:0 5px 20px #a9446c25;
+}
+
+/* مثلث روی پاکت */
+
+.flap{
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:0;
+    border-left:160px solid transparent;
+    border-right:160px solid transparent;
+    border-top:115px solid #ffb1cc;
+    z-index:4;
+    filter:drop-shadow(0 2px 1px #d9578b22);
+}
+
+/* قلب روی پاکت */
+
+.envelope-heart{
+    position:absolute;
+    z-index:6;
+    left:50%;
+    top:92px;
+    transform:translateX(-50%);
+    font-size:40px;
+    animation:pulse 1.4s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:translateX(-50%) scale(1.15);
+    }
+}
+
+.open-text{
+    margin-top:25px;
+    color:#9e4d72;
+    font-size:16px;
+}
+
+.hint{
+    font-size:13px;
+    color:#a97890;
+    margin-top:7px;
+}
+
+/* کارت نامه */
+
+#letterBook{
+    display:none;
+    width:100%;
+    height:100vh;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    z-index:5;
+}
+
+.book{
+    width:min(92%,620px);
+    min-height:480px;
+    background:#fffafc;
+    border:5px solid #ffd1e1;
+    border-radius:35px;
+    box-shadow:
+        0 25px 70px #a44b7335,
+        inset 0 0 30px #ffddeb;
+    padding:35px 28px;
+    text-align:center;
+    position:relative;
+    animation:bookOpen .7s ease;
+}
+
+@keyframes bookOpen{
+    from{
+        opacity:0;
+        transform:scale(.75) rotate(-2deg);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) rotate(0);
+    }
+}
+
+.ribbon{
+    position:absolute;
+    top:-18px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#ff7fac;
+    color:white;
+    padding:7px 22px;
+    border-radius:30px;
+    font-size:14px;
+    box-shadow:0 7px 15px #c7588533;
+}
+
+.page{
+    display:none;
+    animation:pageIn .45s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateX(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+.character{
+    font-size:65px;
+    margin-top:15px;
+}
+
+h1{
+    color:#d45288;
+    font-size:32px;
+    margin:12px 0 20px;
+}
+
+p{
+    font-size:17px;
+    line-height:2.1;
+    margin:12px 0;
+}
+
+.cute{
+    font-size:24px;
+    font-weight:800;
+    color:#c94e83;
+}
+
+.divider{
+    color:#ff8eb6;
+    font-size:23px;
+    margin:18px;
+}
+
+/* دکمه */
+
+.btn{
+    border:none;
+    cursor:pointer;
+    margin-top:22px;
+    padding:13px 27px;
+    border-radius:999px;
+    background:linear-gradient(90deg,#ff78a9,#bb86ff);
+    color:white;
+    font-family:inherit;
+    font-size:16px;
+    font-weight:600;
+    box-shadow:0 10px 25px #b86c9b3d;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+.btn:active{
+    transform:scale(.94);
+}
+
+/* شماره صفحات */
+
+.pages{
+    position:absolute;
+    bottom:15px;
+    left:0;
+    right:0;
+    color:#c486a1;
+    font-size:12px;
+}
+
+/* نتیجه آشتی */
+
+#success{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:#ffddeaee;
+    z-index:20;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.success-box{
+    background:#fffafd;
+    width:90%;
+    max-width:500px;
+    padding:45px 25px;
+    border-radius:35px;
+    box-shadow:0 25px 70px #a74e7638;
+    animation:success .7s ease;
+}
+
+.success-heart{
+    font-size:75px;
+    animation:heartBeat 1s infinite;
+}
+
+@keyframes heartBeat{
+    50%{transform:scale(1.15)}
+}
+
+@keyframes success{
+    from{
+        opacity:0;
+        transform:scale(.6);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.confetti{
+    position:fixed;
+    top:-30px;
+    font-size:25px;
+    animation:confetti 3s linear forwards;
+    z-index:30;
+}
+
+@keyframes confetti{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ستاره‌ها -->
+<div class="star s1">✦</div>
+<div class="star s2">✧</div>
+<div class="star s3">✦</div>
+<div class="star s4">✧</div>
+<div class="star s5">✦</div>
+
+<!-- قلب‌های شناور -->
+<div class="floating-heart f1">♡</div>
+<div class="floating-heart f2">♥</div>
+<div class="floating-heart f3">♡</div>
+<div class="floating-heart f4">♥</div>
+<div class="floating-heart f5">♡</div>
+
+
+<!-- صفحه اول -->
+
+<section id="intro">
+
+    <div class="intro-content">
+
+        <div class="intro-small">
+            یه نامه کوچولو برای یه آدم خیلی خاص... 🌷
+        </div>
+
+        <div class="envelope" onclick="openLetter()">
+
+            <div class="letter-preview">
+                برای عروسک کوچولوی من 💗
+            </div>
+
+            <div class="envelope-body"></div>
+
+            <div class="flap"></div>
+
+            <div class="envelope-heart">
+                💗
+            </div>
+
+        </div>
+
+        <div class="open-text">
+            روی نامه بزن تا بازش کنی 🥺🎀
+        </div>
+
+        <div class="hint">
+            یه عالمه حرف قشنگ داخلشه...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- دفتر نامه -->
+
+<section id="letterBook">
+
+<div class="book">
+
+    <div class="ribbon">
+        💌 نامه مخصوص مارال
+    </div>
+
+
+    <!-- صفحه ۱ -->
+
+    <div class="page active" id="p1">
+
+        <div class="character">
+            🧸🌷
+        </div>
+
+        <h1>
+            سلام عروسک کوچولوی من 💗
+        </h1>
+
+        <div class="divider">
+            ♡　✦　♡
+        </div>
+
+        <p>
+            اول از همه بیا یه بغل مجازی بدم بهت 🫂🥺
+        </p>
+
+        <p>
+            چون این نامه فقط برای تو نوشته شده،
+            برای همون عروسک کوچولویی که خیلی دوست‌داشتنیه. 🎀
+        </p>
+
+        <button class="btn" onclick="nextPage()">
+            ادامه نامه 💌
+        </button>
+
+        <div class="pages">
+            صفحه ۱ از ۴
+        </div>
+
+    </div>
+
+
+    <!-- صفحه ۲ -->
+
+    <div class="page" id="p2">
+
+        <div class="character">
+            🥺🌸
+        </div>
+
+        <h1>
+            یه عذرخواهی کوچولو...
+        </h1>
+
+        <p>
+            مارال، بابت اینکه امروز صبح دیر از خواب پا شدم
+            و باعث شدم منتظر بمونی یا ناراحت بشی،
+            واقعاً معذرت می‌خوام. 🥹💗
+        </p>
+
+        <p>
+            می‌دونم یه «ببخشید» کوچولو شاید کافی نباشه،
+            ولی واقعاً دلم نمی‌خواست ناراحتت کنم. 🌷
+        </p>
+
+        <p class="cute">
+            ببخش نینی رو؟ 🥺👉👈
+        </p>
+
+        <button class="btn" onclick="nextPage()">
+            صفحه بعد 🎀
+        </button>
+
+        <div class="pages">
+            صفحه ۲ از ۴
+        </div>
+
+    </div>
+
+
+    <!-- صفحه ۳ -->
+
+    <div class="page" id="p3">
+
+        <div class="character">
+            🧸💗🌷
+        </div>
+
+        <h1>
+            حالا یه عالمه قربون صدقه 💞
+        </h1>
+
+        <p>
+            قربون اون دل مهربونت برم،
+            فدای خنده‌هات بشم،
+            قربون خودت و اون قلب قشنگت. 🥹
+        </p>
+
+        <p>
+            الهی من فدای اون عروسک کوچولوی ناز بشم
+            که امیدوارم زود دلش آروم بشه. 🌸
+        </p>
+
+        <p class="cute">
+            دلت نیاد با نینی قهر کنیییی 😭💗
+        </p>
+
+        <button class="btn" onclick="nextPage()">
+            آخر نامه ✨
+        </button>
+
+        <div class="pages">
+            صفحه ۳ از ۴
+        </div>
+
+    </div>
+
+
+    <!-- صفحه ۴ -->
+
+    <div class="page" id="p4">
+
+        <div class="character">
+            💗🧸💗
+        </div>
+
+        <h1>
+            مارال... صلح؟ 🥺
+        </h1>
+
+        <p>
+            قول می‌دم دفعه بعد بیشتر حواسم به ساعت باشه
+            و نذارم یه دیر بیدار شدن کوچولو
+            باعث ناراحتی عروسک من بشه. 🌷
+        </p>
+
+        <p class="cute">
+            با نینی آشتی می‌کنی؟ 🥹💞
+        </p>
+
+        <button class="btn" onclick="forgive()">
+            آشتی کنیم؟ 💌
+        </button>
+
+        <div class="pages">
+            صفحه ۴ از ۴
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- صفحه آشتی -->
+
+<section id="success">
+
+    <div class="success-box">
+
+        <div class="success-heart">
+            💗
+        </div>
+
+        <h1>
+            یییییی آشتی کردیمممم؟ 😭💞
+        </h1>
+
+        <p>
+            قربون عروسک کوچولوی خودم برم 🥹🌷
+        </p>
+
+        <p class="cute">
+            دیگه قهر نکنیااا 🎀🧸
+        </p>
+
+    </div>
+
+</section>
+
+
+<script>
+
+let currentPage = 1;
+
+function openLetter(){
+
+    document.getElementById("intro").style.display="none";
+
+    document.getElementById("letterBook").style.display="flex";
+}
+
+function nextPage(){
+
+    document.getElementById("p" + currentPage)
+        .classList.remove("active");
+
+    currentPage++;
+
+    document.getElementById("p" + currentPage)
+        .classList.add("active");
+}
+
+function forgive(){
+
+    document.getElementById("letterBook").style.display="none";
+
+    document.getElementById("success").style.display="flex";
+
+    createConfetti();
+}
+
+function createConfetti(){
+
+    const items=["💗","🌸","🎀","♡","✨","🌷","🧸"];
+
+    for(let i=0;i<35;i++){
+
+        const item=document.createElement("div");
+
+        item.className="confetti";
+
+        item.innerHTML=
+            items[Math.floor(Math.random()*items.length)];
+
+        item.style.left=Math.random()*100+"vw";
+
+        item.style.animationDelay=
+            Math.random()*1.5+"s";
+
+        item.style.fontSize=
+            (18+Math.random()*20)+"px";
+
+        document.body.appendChild(item);
+
+        setTimeout(()=>{
+            item.remove();
+        },4000);
+    }
+}
+
+</script>
+
+</body>
+  </html>
